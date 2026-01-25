@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vamsi Milk - Bangalore</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <header class="nav">
+    <div class="brand">
+      <div class="brandIcon">🥛</div>
+      <div>
+        <div class="brandName">Vamsi Milk</div>
+        <div class="brandSub">Farm Fresh Cow Milk • Bangalore</div>
+      </div>
+    </div>
+
+    <div class="navBtns">
+      <button class="btnGhost" onclick="shareWebsite()">Share</button>
+      <button class="btnPrimary" onclick="openLogin()">Login</button>
+    </div>
+  </header>
+
+  <!-- ✅ SCROLLING MESSAGE (Professional) -->
+  <div class="ticker">
+    <div class="tickerMove">
+      ✅ Fresh Cow Milk ₹80/L • Morning Delivery 6AM / 9AM • Weekly & 15 Days Plan • Bangalore Only • Contact Vamsi: 9441990255 • Pay via PhonePe/UPI ✅
+    </div>
+  </div>
+
+  <!-- ✅ HERO (ButterMilk Style) -->
+  <section class="hero">
+    <div class="heroText">
+      <h1>Good milk,<span> good life!</span></h1>
+      <p>
+        Fresh cow milk delivered daily to your doorstep in Bangalore.
+        Hygienic, natural and handled with care.
+      </p>
+
+      <div class="heroBtns">
+        <button class="btnPrimary" onclick="openLogin()">Order Now</button>
+        <button class="btnGhost" onclick="callVamsi()">Call 9441990255</button>
+      </div>
+
+      <div class="badges">
+        <span>✅ Farm to Home</span>
+        <span>✅ No Water / No Mixing</span>
+        <span>✅ Daily Morning Delivery</span>
+      </div>
+    </div>
+
+    <div class="heroCard">
+      <div class="priceBox">
+        <div class="priceTitle">Cow Milk</div>
+        <div class="price">₹80 <span>/ litre</span></div>
+        <div class="priceNote">Bangalore Only</div>
+      </div>
+
+      <div class="miniGrid">
+        <div class="mini">
+          <div class="miniIcon">⏰</div>
+          <div>
+            <div class="miniTitle">Delivery</div>
+            <div class="miniText">6AM / 9AM</div>
+          </div>
+        </div>
+        <div class="mini">
+          <div class="miniIcon">🧼</div>
+          <div>
+            <div class="miniTitle">Hygiene</div>
+            <div class="miniText">Clean handled</div>
+          </div>
+        </div>
+        <div class="mini">
+          <div class="miniIcon">📍</div>
+          <div>
+            <div class="miniTitle">Service</div>
+            <div class="miniText">Bangalore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ HOW TO ORDER -->
+  <section class="section">
+    <h2 class="secTitle">How to order</h2>
+    <p class="secSub">3 simple steps to start delivery</p>
+
+    <div class="cards3">
+      <div class="infoCard">
+        <div class="stepCircle">1</div>
+        <h3>Login & Add Details</h3>
+        <p>Enter mobile, name & address for delivery.</p>
+      </div>
+
+      <div class="infoCard">
+        <div class="stepCircle">2</div>
+        <h3>Select Plan</h3>
+        <p>Choose quantity, timing and plan days.</p>
+      </div>
+
+      <div class="infoCard">
+        <div class="stepCircle">3</div>
+        <h3>Confirm Order</h3>
+        <p>Pay with PhonePe/UPI or Cash on delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ WHY CHOOSE US -->
+  <section class="section light">
+    <h2 class="secTitle">Why choose us</h2>
+    <p class="secSub">Simple, natural and trusted delivery</p>
+
+    <div class="whyGrid">
+      <div class="whyCard">
+        <div class="whyIcon">🥛</div>
+        <div>
+          <div class="whyTitle">Pure Cow Milk</div>
+          <div class="whyText">No chemicals, no mixing.</div>
+        </div>
+      </div>
+      <div class="whyCard">
+        <div class="whyIcon">🏆</div>
+        <div>
+          <div class="whyTitle">Quality Delivery</div>
+          <div class="whyText">Handled hygienically.</div>
+        </div>
+      </div>
+      <div class="whyCard">
+        <div class="whyIcon">🚪</div>
+        <div>
+          <div class="whyTitle">Doorstep</div>
+          <div class="whyText">Morning fresh delivery.</div>
+        </div>
+      </div>
+      <div class="whyCard">
+        <div class="whyIcon">📞</div>
+        <div>
+          <div class="whyTitle">Direct Owner</div>
+          <div class="whyText">Talk to Vamsi anytime.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ LOGIN MODAL -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modalBox">
+      <div class="modalTop">
+        <h2>Login</h2>
+        <button class="closeBtn" onclick="closeLogin()">✖</button>
+      </div>
+
+      <p class="muted">Login using your mobile number to place order</p>
+
+      <form id="loginForm">
+        <label>Mobile Number</label>
+        <input type="tel" id="mobile" placeholder="10-digit mobile" maxlength="10" required />
+        <button type="submit" class="btnPrimary full">Continue</button>
+      </form>
+
+      <button class="btnGhost full" onclick="whatsappHelp()">Need Help on WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- ✅ ORDER PAGE (After Login) -->
+  <section id="orderSection" class="section hidden">
+    <div class="orderWrap">
+      <div class="orderHead">
+        <h2>Place Your Order</h2>
+        <p class="muted">Fill details & choose plan</p>
+      </div>
+
+      <div class="formGrid">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" id="name" placeholder="Customer Name" />
+        </div>
+
+        <div class="field">
+          <label>Full Address</label>
+          <input type="text" id="address" placeholder="House No, Street, Area" />
+        </div>
+
+        <div class="field">
+          <label>Location (Bangalore)</label>
+          <input type="text" id="location" placeholder="Example: Whitefield" />
+        </div>
+
+        <div class="field">
+          <label>Milk Quantity (L/day)</label>
+          <select id="quantity">
+            <option value="0.5">0.5 L</option>
+            <option value="1">1 L</option>
+            <option value="2">2 L</option>
+            <option value="3">3 L</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Delivery Time</label>
+          <select id="deliveryTime">
+            <option value="6 AM">6 AM</option>
+            <option value="9 AM">9 AM</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Plan</label>
+          <select id="plan">
+            <option value="7">1 Week (7 Days)</option>
+            <option value="15">15 Days</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Payment</label>
+          <select id="payment">
+            <option value="PhonePe / UPI">PhonePe / UPI</option>
+            <option value="Cash On Delivery">Cash On Delivery</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Price Per Liter</label>
+          <input type="text" value="₹80" disabled />
+        </div>
+      </div>
+
+      <button id="addToCartBtn" class="btnPrimary full">Add to Cart</button>
+
+      <div id="cartBox" class="cart hidden">
+        <h3>Your Order Summary</h3>
+        <div id="cartDetails"></div>
+
+        <div class="cartBtns">
+          <button class="btnPrimary" onclick="confirmOrder()">Confirm Order</button>
+          <button class="btnGhost" onclick="whatsappOrder()">Order on WhatsApp</button>
+          <button class="btnGhost" onclick="openPhonePe()">Pay PhonePe</button>
+        </div>
+      </div>
+
+      <!-- ✅ DELIVERY TRACKING (DEMO PROFESSIONAL) -->
+      <div id="trackingBox" class="tracking hidden">
+        <h3>🚚 Live Delivery Tracking</h3>
+        <p class="muted">Tracking will start after order confirmed</p>
+
+        <div class="trackLine">
+          <div class="trackBar" id="trackBar"></div>
+        </div>
+
+        <div class="trackSteps">
+          <div class="trackItem active" id="t1">✅ Order Confirmed</div>
+          <div class="trackItem" id="t2">📦 Preparing</div>
+          <div class="trackItem" id="t3">🚚 Out for Delivery</div>
+          <div class="trackItem" id="t4">📍 Near You</div>
+          <div class="trackItem" id="t5">🎉 Delivered</div>
+        </div>
+
+        <div class="etaBox">
+          ⏳ Estimated Time: <b id="etaTime">20 min</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ FOOTER -->
+  <footer class="footer">
+    © <span id="year"></span> All Rights Reserved - <b>Esukapalli Vamsi</b>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
