@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vamsi Cow Milk - Bangalore</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- LOGIN PAGE -->
+  <section id="loginSection" class="loginPage">
+    <div class="loginBox">
+      <h1>🥛 Farm Fresh Cow Milk</h1>
+      <p class="smallText">Available in Bangalore Only</p>
+      <p><b>Contact Vamsi:</b> 9441990255</p>
+
+      <form id="loginForm">
+        <label>Mobile Number</label>
+        <input type="tel" id="mobile" placeholder="Enter 10-digit mobile" required maxlength="10"/>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <div class="helpBox">
+        <button class="btn helpBtn" onclick="callVamsi()">📞 Call Help</button>
+        <button class="btn whatsappBtn" onclick="whatsappHelp()">💬 WhatsApp Help</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ORDER PAGE -->
+  <section id="orderSection" class="card hidden">
+    <h2>Order Cow Milk 🥛</h2>
+
+    <div class="grid">
+      <div>
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required/>
+      </div>
+
+      <div>
+        <label>Full Address</label>
+        <input type="text" id="address" placeholder="House No, Street, Area" required/>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <label>Location (Bangalore)</label>
+        <input type="text" id="location" placeholder="Example: Whitefield" required/>
+      </div>
+
+      <div>
+        <label>Live Location</label>
+        <button class="btn locationBtn" type="button" onclick="getLiveLocation()">📍 Get Live Location</button>
+        <p id="liveLocationText" class="smallText"></p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <label>Milk Quantity (Liters per day)</label>
+        <select id="quantity">
+          <option value="0.5">0.5 L</option>
+          <option value="1">1 L</option>
+          <option value="2">2 L</option>
+          <option value="3">3 L</option>
+          <option value="5">5 L</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Price Per Liter (₹)</label>
+        <input type="text" id="pricePerLiter" value="80" readonly/>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <label>Morning Delivery Time</label>
+        <select id="deliveryTime">
+          <option value="6 AM">6 AM</option>
+          <option value="9 AM">9 AM</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Select Plan</label>
+        <select id="plan">
+          <option value="7">1 Week (7 Days)</option>
+          <option value="15">15 Days</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <label>Payment</label>
+        <select id="payment">
+          <option value="UPI">UPI</option>
+          <option value="Cash On Delivery">Cash On Delivery</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Contact</label>
+        <input type="text" value="Vamsi - 9441990255" readonly/>
+      </div>
+    </div>
+
+    <button id="addToCartBtn" class="btn">Add to Cart</button>
+  </section>
+
+
+  <!-- CART -->
+  <section id="cartSection" class="card hidden">
+    <h2>Cart</h2>
+    <div id="cartDetails" class="cartBox"></div>
+
+    <button id="placeOrderBtn" class="btn green">Place Order</button>
+
+    <button id="whatsappOrderBtn" class="btn whatsappBtn">
+      💬 Place Order on WhatsApp
+    </button>
+  </section>
+
+
+  <!-- CONFIRM -->
+  <section id="confirmationSection" class="card hidden">
+    <h2>✅ Order Confirmed</h2>
+    <div id="finalSummary" class="cartBox"></div>
+
+    <button class="btn" onclick="location.reload()">New Order</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
