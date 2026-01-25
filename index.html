@@ -182,3 +182,71 @@
             <option value="1">1 L</option>
             <option value="2">2 L</option>
             <option value="3">3 L
+              <script>
+  // ✅ TEST (you can remove later)
+  function testJS(){
+    alert("✅ JavaScript Working!");
+  }
+
+  // ✅ OPEN / CLOSE LOGIN
+  function openLogin(){
+    const modal = document.getElementById("loginModal");
+    if(modal) modal.classList.remove("hidden");
+  }
+  function closeLogin(){
+    const modal = document.getElementById("loginModal");
+    if(modal) modal.classList.add("hidden");
+  }
+
+  // ✅ CALL VAMSI
+  function callVamsi(){
+    window.location.href = "tel:9441990255";
+  }
+
+  // ✅ SHARE WEBSITE
+  function shareWebsite(){
+    const url = window.location.href;
+    if(navigator.share){
+      navigator.share({
+        title:"Vamsi Milk",
+        text:"Farm Fresh Cow Milk Bangalore",
+        url:url
+      });
+    }else{
+      alert("Copy this link: " + url);
+    }
+  }
+
+  // ✅ WHATSAPP HELP
+  function whatsappHelp(){
+    const msg = "Hi Vamsi, I need help for milk delivery.";
+    window.open("https://wa.me/919441990255?text=" + encodeURIComponent(msg), "_blank");
+  }
+
+  // ✅ LOGIN FORM SUBMIT (move to next step)
+  document.addEventListener("DOMContentLoaded", function(){
+    const loginForm = document.getElementById("loginForm");
+    if(loginForm){
+      loginForm.addEventListener("submit", function(e){
+        e.preventDefault();
+        const mobile = document.getElementById("loginMobile").value.trim();
+        if(mobile.length !== 10){
+          alert("Enter valid 10 digit number");
+          return;
+        }
+        closeLogin();
+
+        const orderSection = document.getElementById("orderSection");
+        if(orderSection){
+          orderSection.classList.remove("hidden");
+          orderSection.scrollIntoView({behavior:"smooth"});
+        }
+
+        const customerMobile = document.getElementById("customerMobile");
+        if(customerMobile) customerMobile.value = mobile;
+      });
+    }
+  });
+
+  console.log("✅ Inline JS loaded");
+              </script>
