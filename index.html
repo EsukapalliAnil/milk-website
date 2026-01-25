@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vamsi Milk - Bangalore</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ✅ TOP HEADER -->
+  <header class="topHeader">
+    <div class="logoArea">
+      <h2>🥛 Vamsi Milk</h2>
+      <p>Farm Fresh Cow Milk - Bangalore Only</p>
+    </div>
+
+    <div class="headerButtons">
+      <button class="shareBtn" onclick="shareWebsite()">🔗 Share</button>
+      <button class="helpBtn" onclick="callVamsi()">📞 Help</button>
+    </div>
+  </header>
+
+  <!-- ✅ SCROLLING MESSAGE -->
+  <div class="marqueeBox">
+    <marquee>
+      🎉 OFFER: First 3 days delivery FREE for new customers | ₹80/Litre | Morning delivery 6AM / 9AM | Contact Vamsi: 9441990255
+    </marquee>
+  </div>
+
+  <!-- ✅ AMUL STYLE COLOR MENU -->
+  <section class="amulMenu">
+    <div class="menuRow green">🏠 Home</div>
+    <div class="menuRow pink">🥛 Cow Milk</div>
+    <div class="menuRow blue">🎁 Offers</div>
+    <div class="menuRow orange">🕒 Delivery Timings</div>
+    <div class="menuRow yellow">📞 Contact</div>
+  </section>
+
+  <!-- ✅ OFFERS SECTION -->
+  <section class="card">
+    <h2>🎁 Today Offers</h2>
+    <ul class="offerList">
+      <li>✅ New Customer Offer: 3 Days FREE Delivery</li>
+      <li>✅ Weekly Plan (7 Days) - Best Price</li>
+      <li>✅ 15 Days Plan - Extra Discount</li>
+      <li>✅ Doorstep Morning Delivery</li>
+    </ul>
+  </section>
+
+  <!-- ✅ PAYMENT SECTION -->
+  <section class="card">
+    <h2>💰 Pay Using PhonePe</h2>
+    <p><b>PhonePe Number:</b> 9441990255</p>
+    <button class="payBtn" onclick="phonepePay()">📲 Pay Now (PhonePe)</button>
+    <p class="smallNote">*This will open UPI payment apps in your mobile</p>
+  </section>
+
+  <!-- ✅ LOGIN SECTION -->
+  <section id="loginSection" class="card">
+    <h2>Login</h2>
+    <p>Login using mobile number to order milk</p>
+
+    <form id="loginForm">
+      <label>Mobile Number</label>
+      <input type="tel" id="mobile" placeholder="Enter 10-digit mobile" required maxlength="10" />
+      <button type="submit" class="mainBtn">Login</button>
+    </form>
+  </section>
+
+  <!-- ✅ ORDER SECTION -->
+  <section id="orderSection" class="card hidden">
+    <h2>Order Cow Milk</h2>
+
+    <label>Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required/>
+
+    <label>Full Address</label>
+    <input type="text" id="address" placeholder="House No, Street, Area" required/>
+
+    <label>Location (Bangalore)</label>
+    <input type="text" id="location" placeholder="Example: Whitefield" required/>
+
+    <label>Milk Quantity (Liters per day)</label>
+    <select id="quantity">
+      <option value="0.5">0.5 L</option>
+      <option value="1">1 L</option>
+      <option value="2">2 L</option>
+      <option value="3">3 L</option>
+    </select>
+
+    <label>Morning Delivery Time</label>
+    <select id="deliveryTime">
+      <option value="6 AM">6 AM</option>
+      <option value="9 AM">9 AM</option>
+    </select>
+
+    <label>Select Plan</label>
+    <select id="plan">
+      <option value="7">1 Week (7 Days)</option>
+      <option value="15">15 Days</option>
+    </select>
+
+    <label>Payment</label>
+    <select id="payment">
+      <option value="UPI">UPI</option>
+      <option value="Cash On Delivery">Cash On Delivery</option>
+    </select>
+
+    <button id="addToCartBtn" class="mainBtn">Add to Cart</button>
+  </section>
+
+  <!-- ✅ CART SECTION -->
+  <section id="cartSection" class="card hidden">
+    <h2>Cart</h2>
+    <div id="cartDetails" class="cartBox"></div>
+
+    <button id="placeOrderBtn" class="mainBtn greenBtn">Place Order</button>
+    <button id="whatsappOrderBtn" class="mainBtn whatsappBtn">💬 Order on WhatsApp</button>
+  </section>
+
+  <!-- ✅ CONFIRMATION -->
+  <section id="confirmationSection" class="card hidden">
+    <h2>✅ Order Confirmed</h2>
+    <div id="finalSummary" class="cartBox"></div>
+    <button class="mainBtn" onclick="location.reload()">New Order</button>
+  </section>
+
+  <!-- ✅ FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> All Rights Reserved - <b>Esukapalli Vamsi</b></p>
+  </footer>
+
+  <!-- ✅ JAVASCRIPT -->
+  <script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    const PRICE_PER_LITER = 80;
+    const VAMSI_MOBILE = "9441990255";
+    let cart = null;
+
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let mobile = document.getElementById("mobile").value.trim();
+      if(mobile.length !== 10){
+        alert("Please enter valid 10-digit mobile number");
+        return;
+      }
+      document.getElementById("loginSection").classList.add("hidden");
+      document.getElementById("orderSection").classList.remove("hidden");
+    });
+
+    document.getElementById("addToCartBtn").addEventListener("click", function(){
+      let name = document.getElementById("name").value.trim();
+      let address = document.getElementById("address").value.trim();
+      let location = document.getElementById("location").value.trim();
+      let qty = parseFloat(document.getElementById("quantity").value);
+      let deliveryTime = document.getElementById("deliveryTime").value;
+      let days = parseInt(document.getElementById("plan").value);
+      let payment = document.getElementById("payment").value;
+
+      if(name === "" || address === "" || location === ""){
+        alert("Please fill Name, Address and Location");
+        return;
+      }
+
+      let oneDayTotal = qty * PRICE_PER_LITER;
+      let grandTotal = oneDayTotal * days;
+
+      cart = { name, address, location, qty, deliveryTime, days, payment, grandTotal };
+
+      document.getElementById("cartDetails").innerHTML = `
+        <p><b>Name:</b> ${cart.name}</p>
+        <p><b>Address:</b> ${cart.address}</p>
+        <p><b>Location:</b> ${cart.location}</p>
+        <p><b>Delivery Time:</b> ${cart.deliveryTime}</p>
+        <p><b>Milk:</b> ${cart.qty} L/day</p>
+        <p><b>Plan:</b> ${cart.days} Days</p>
+        <p><b>Payment:</b> ${cart.payment}</p>
+        <hr>
+        <h3>Total: ₹${cart.grandTotal}</h3>
+      `;
+
+      document.getElementById("orderSection").classList.add("hidden");
+      document.getElementById("cartSection").classList.remove("hidden");
+    });
+
+    document.getElementById("placeOrderBtn").addEventListener("click", function(){
+      if(!cart){
+        alert("Cart is empty");
+        return;
+      }
+      document.getElementById("cartSection").classList.add("hidden");
+      document.getElementById("confirmationSection").classList.remove("hidden");
+
+      document.getElementById("finalSummary").innerHTML = `
+        <p><b>Thank you ${cart.name} ✅</b></p>
+        <p>Your order is confirmed.</p>
+        <p><b>Total Amount:</b> ₹${cart.grandTotal}</p>
+        <p><b>Delivery Time:</b> ${cart.deliveryTime}</p>
+        <p><b>Contact:</b> Vamsi - ${VAMSI_MOBILE}</p>
+      `;
+    });
+
+    document.getElementById("whatsappOrderBtn").addEventListener("click", function(){
+      if(!cart){
+        alert("Cart is empty");
+        return;
+      }
+
+      let msg = `Hi Vamsi, New Milk Order ✅%0A%0A` +
+        `Name: ${cart.name}%0A` +
+        `Address: ${cart.address}%0A` +
+        `Location: ${cart.location}%0A` +
+        `Delivery Time: ${cart.deliveryTime}%0A` +
+        `Milk: ${cart.qty} L/day%0A` +
+        `Plan: ${cart.days} Days%0A` +
+        `Payment: ${cart.payment}%0A` +
+        `Total: ₹${cart.grandTotal}`;
+
+      window.open(`https://wa.me/91${VAMSI_MOBILE}?text=${msg}`, "_blank");
+    });
+
+    function phonepePay(){
+      // ✅ UPI payment deep link
+      const upiLink = `upi://pay?pa=${VAMSI_MOBILE}@paytm&pn=Esukapalli%20Vamsi&am=&cu=INR`;
+      window.location.href = upiLink;
+    }
+
+    function callVamsi(){
+      window.location.href = `tel:${VAMSI_MOBILE}`;
+    }
+
+    function shareWebsite(){
+      const url = window.location.href;
+      if(navigator.share){
+        navigator.share({
+          title: "Vamsi Milk - Bangalore",
+          text: "Farm Fresh Cow Milk Order Website",
+          url: url
+        });
+      } else {
+        alert("Sharing not supported. Copy link: " + url);
+      }
+    }
+  </script>
+
+</body>
+</html>

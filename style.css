@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f7ff;
+}
+
+/* ✅ Header */
+.topHeader {
+  background: #ffffff;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #1b7d35;
+}
+
+.logoArea h2 {
+  margin: 0;
+  color: #1b7d35;
+}
+
+.logoArea p {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+  color: #444;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.shareBtn, .helpBtn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.shareBtn { background: #005bbb; }
+.helpBtn { background: #ff9800; }
+
+/* ✅ scrolling marquee */
+.marqueeBox {
+  background: #1b7d35;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+}
+
+/* ✅ AMUL MENU */
+.amulMenu {
+  margin: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.menuRow {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.green { background: #2e7d32; }
+.pink { background: #ff3ea5; }
+.blue { background: #00a2ff; }
+.orange { background: #ff7a00; }
+.yellow { background: #ffcc00; color: #222; }
+
+/* ✅ cards */
+.card {
+  width: 90%;
+  max-width: 650px;
+  background: white;
+  margin: 15px auto;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hidden { display: none; }
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.mainBtn {
+  background: #1b7d35;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.greenBtn { background: #0a8a56; }
+.whatsappBtn { background: #25D366; }
+
+.payBtn {
+  background: #673ab7;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.smallNote {
+  font-size: 13px;
+  color: #555;
+}
+
+.offerList li {
+  padding: 8px;
+}
+
+/* ✅ cart box */
+.cartBox {
+  background: #f7fff2;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #d7f0d0;
+  margin-top: 10px;
+}
+
+/* ✅ footer */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #1b7d35;
+  color: white;
+  margin-top: 20px;
+}
