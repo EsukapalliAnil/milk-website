@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+}
+
+.marquee {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2d3436;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  z-index: 10;
+}
+
+.marquee a { color: #00cec9; text-decoration: none; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #2d3436;
+  color: white;
+  text-align: center;
+  padding: 8px;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.login-card, .order-card, .help-card {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 380px;
+  margin: 15px auto;
+  border-radius: 12px;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+button {
+  background: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.alert-box {
+  background: #ffeaa7;
+  padding: 10px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
