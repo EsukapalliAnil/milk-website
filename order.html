@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Milk | Vamsi Milk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f5f7;
+}
+
+.top {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.warning {
+  background: #fff3cd;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.upi {
+  background: #2e7d32;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.wa {
+  background: #25d366;
+  color: white;
+}
+
+.help {
+  background: #e3f2fd;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+📞 Anil: <a href="tel:7569446231" style="color:white;">7569446231</a> |
+📞 Vamsi: <a href="tel:9441990255" style="color:white;">9441990255</a>
+</div>
+
+<div class="warning">
+⚠️ Do NOT pay delivery person. Pay via UPI or settlement (7 / 15 days).
+</div>
+
+<div class="card">
+<h2>Order Milk</h2>
+
+<input type="text" id="name" readonly>
+<input type="text" id="mobile" readonly>
+
+<textarea id="address" placeholder="Full Address / Nearby location"></textarea>
+
+<select id="qty" onchange="calc()">
+  <option value="0.5">0.5 L</option>
+  <option value="1">1 L</option>
+  <option value="2">2 L</option>
+</select>
+
+<select id="days" onchange="calc()">
+  <option value="7">7 Days</option>
+  <option value="15">15 Days</option>
+</select>
+
+<p><b>Total Amount: ₹<span id="total">0</span></b></p>
+
+<button class="upi" onclick="pay()">Pay via UPI</button>
+<button class="wa" onclick="send()">Send Order to WhatsApp</button>
+</div>
+
+<div class="help">
+<b>Help / Complaint</b><br>
+📞 Anil: 7569446231<br>
+📞 Vamsi: 9441990255
+</div>
+
+<footer>
+© All Rights Reserved – Esukapalli Vamsi
+</footer>
+
+<script>
+const name = localStorage.getItem("NAME");
+const mobile = localStorage.getItem("MOBILE");
+
+if (!name || !mobile) {
+  window.location.href = "index.html";
+}
+
+document.getElementById("name").value = name;
+document.getElementById("mobile").value = mobile;
+
+function calc() {
+  const qty = parseFloat(document.getElementById("qty").value);
+  const days = parseInt(document.getElementById("days").value);
+  document.getElementById("total").innerText = qty * 80 * days;
+}
+
+calc();
+
+function pay() {
+  const amt = document.getElementById("total").innerText;
+  window.location.href =
+    "upi://pay?pa=7569446231-3@axl&pn=VamsiMilk&am=" + amt + "&cu=INR";
+}
+
+function send() {
+  const msg =
+`Milk Order
+Name: ${name}
+Mobile: ${mobile}
+Address: ${document.getElementById("address").value}
+Amount: ₹${document.getElementById("total").innerText}`;
+
+  window.open(
+    "https://wa.me/919441990255?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
