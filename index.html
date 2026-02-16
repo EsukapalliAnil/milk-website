@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vamsi Milk | Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+<div class="top-bar">
+📞 Anil: <a href="tel:7569446231">7569446231</a> |
+📞 Vamsi: <a href="tel:9441990255">9441990255</a>
+</div>
+
+<div class="login-container">
+  <div class="login-card">
+    <h1>🥛 Vamsi Milk</h1>
+    <p class="subtitle">Natural • Fresh • Trusted</p>
+
+    <form onsubmit="login(event)">
+      <input type="text" id="name" placeholder="Enter Full Name" required>
+      <input type="tel" id="mobile" placeholder="10-digit Mobile Number"
+             maxlength="10" pattern="[0-9]{10}" required>
+
+      <button type="submit">Login & Order Milk</button>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+© All Rights Reserved – Esukapalli Vamsi
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
