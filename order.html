@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Milk | Vamsi Milk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+🥛 Vamsi Milk – Order Booking
+</div>
+
+<div class="alert-box">
+⚠️ Do NOT pay delivery person.  
+Pay only via UPI or cash settlement (7 / 15 days).
+</div>
+
+<div class="order-card">
+<h2>Order Details</h2>
+
+<form onsubmit="sendWhatsApp(event)">
+  <input type="text" id="oName" readonly>
+  <input type="text" id="oMobile" readonly>
+
+  <textarea id="address" placeholder="Full Address (Nearby location)" required></textarea>
+  <input type="text" id="pincode" placeholder="Pincode" required>
+
+  <button type="button" onclick="getLocation()">📍 Detect Live Location</button>
+
+  <select id="quantity" onchange="calculateBill()">
+    <option value="0.5">0.5 L</option>
+    <option value="1">1 L</option>
+    <option value="2">2 L</option>
+    <option value="3">3 L</option>
+    <option value="4">4 L</option>
+    <option value="5">5 L</option>
+  </select>
+
+  <select id="time">
+    <option>Morning (6 AM – 9 AM)</option>
+    <option>Evening (6 PM – 8 PM)</option>
+  </select>
+
+  <select id="plan" onchange="calculateBill()">
+    <option>7 Days Plan</option>
+    <option>15 Days Plan</option>
+  </select>
+
+  <p id="bill"></p>
+
+  <h3>💳 Pay Using UPI</h3>
+  <div class="upi-buttons">
+    <a href="upi://pay?pa=7569446231-3@axl&pn=VamsiMilk" target="_blank">PhonePe</a>
+    <a href="upi://pay?pa=7569446231-3@axl&pn=VamsiMilk" target="_blank">Google Pay</a>
+    <a href="upi://pay?pa=7569446231-3@axl&pn=VamsiMilk" target="_blank">Paytm</a>
+  </div>
+
+  <button type="submit">Send Order to WhatsApp</button>
+</form>
+</div>
+
+<div class="help-section">
+<h3>Help / Complaint</h3>
+<p>
+📞 Anil: 7569446231<br>
+📞 Vamsi: 9441990255<br>
+📩 WhatsApp available
+</p>
+</div>
+
+<footer class="footer">
+© All Rights Reserved – Esukapalli Vamsi
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

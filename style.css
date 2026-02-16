@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+}
+
+/* MARQUEE */
+.marquee {
+  background: #2d3436;
+  color: white;
+  padding: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scroll 12s linear infinite;
+}
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* LOGIN */
+.login-body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6c5ce7, #00cec9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.login-container button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ORDER PAGE */
+.top-bar {
+  background: #0984e3;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.alert-box {
+  background: #ffeaa7;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.order-card {
+  background: white;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.order-card input,
+.order-card textarea,
+.order-card select,
+.order-card button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.upi-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.upi-buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background: #00b894;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.help-section {
+  background: #dfe6e9;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 12px;
+  background: #2d3436;
+  color: white;
+  font-size: 0.9rem;
+}
