@@ -1,38 +1,45 @@
----
+# 🥛 Vamsi Milk – Online Milk Ordering Website
 
-## 📌 How to Use
+Vamsi Milk is a simple and user-friendly **online milk order booking website** built using **HTML, CSS, and JavaScript** and hosted on **GitHub Pages**.
 
-1. Open the website link  
-2. Enter your **Name** and **10-digit Mobile Number**  
-3. Login and place your milk order  
-4. Select quantity and plan  
-5. Pay via UPI or settle as per plan  
-6. Send order details via WhatsApp  
-
----
-
-## ⚠️ Important Note
-
-- This is a **static website** (no backend).
-- Login and data handling are handled using **browser localStorage**.
-- Orders are sent via **WhatsApp**, not stored in a database.
+This website allows customers to:
+- Login with name and mobile number
+- Book daily milk orders
+- Select quantity and plan (7 / 15 days)
+- View total amount automatically
+- Pay using UPI (PhonePe / Google Pay / Paytm)
+- Send order details directly to WhatsApp
+- Contact owner or support easily
 
 ---
 
-## 📞 Contact Information
+## 🌐 Live Website
 
-- **Owner (Vamsi):** 9441990255  
-- **Support (Anil):** 7569446231  
-- **UPI ID:** 7569446231-3@axl  
+👉 https://pallianil.github.io/milk-website/
 
 ---
 
-## © Copyright
+## ✨ Features
 
-© All Rights Reserved – **Esukapalli Vamsi**
+- 📱 Mobile-friendly & responsive design  
+- 🔐 Simple login (frontend-based)  
+- 🥛 Milk quantity selection (0.5L – 5L)  
+- 📅 7 Days / 15 Days plan  
+- 💰 Auto bill calculation  
+- 💳 UPI payment support  
+- 📞 Click-to-call support  
+- 💬 WhatsApp order integration  
+- 🆘 Help / Complaint section  
 
 ---
 
-## ⭐ Acknowledgement
+## 🛠️ Technologies Used
 
-This project is developed as a **small business / learning project** to demonstrate frontend web development and real-world usage with GitHub Pages.
+- **HTML5**
+- **CSS3**
+- **JavaScript (Vanilla JS)**
+- **GitHub Pages** (Hosting)
+
+---
+
+## 📂 Project Structure
