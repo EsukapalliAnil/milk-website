@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Vamsi Milk Login</title>
-<link rel="stylesheet" href="style.css">
+<title>Vamsi Milk</title>
 </head>
 
-<body class="login-body">
+<body>
 
-<marquee class="scroll">
-Contact Vamsi 📞 | Contact Anil 📞 | Welcome to Vamsi Milk Delivery
-</marquee>
+<h1>🐄 Vamsi Milk</h1>
 
-<div class="login-box">
+<h2>Order Cow Milk</h2>
 
-<h2>Login - Vamsi Milk</h2>
+<input id="name" placeholder="Full Name">
 
-<input type="text" placeholder="Username">
-<input type="password" placeholder="Password">
-
-<button onclick="login()">Login</button>
-
-</div>
+<button onclick="order()">Send Order</button>
 
 <script>
-function login(){
-window.location="home.html";
+
+function order(){
+
+let name=document.getElementById("name").value;
+
+let msg="Milk Order Name:"+name;
+
+window.open("https://wa.me/917569664231?text="+msg);
+
 }
+
 </script>
 
 </body>
