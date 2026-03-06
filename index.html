@@ -1,111 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Vamsi Milk</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
+<title>Vamsi Milk Login</title>
 </head>
 
 <body>
 
-<header>
+<h2>Login - Vamsi Milk</h2>
 
-<h1>🐄 Vamsi Milk</h1>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
 
-<nav>
-<a href="#order">Order</a>
-<a href="#payment">UPI Payment</a>
-<a href="#help">Complaint / Help</a>
-</nav>
+<button onclick="login()">Login</button>
 
-</header>
+<script>
 
+function login(){
 
-<section id="order">
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
 
-<h2>Order Fresh Cow Milk</h2>
+if(u!="" && p!=""){
+window.location="home.html";
+}else{
+alert("Enter username and password");
+}
 
-<input id="name" placeholder="Full Name">
+}
 
-<input id="address" placeholder="Full Address">
-
-<input id="city" placeholder="City">
-
-<input id="pincode" placeholder="Pincode">
-
-
-<h3>Morning Delivery (6AM - 9AM)</h3>
-
-<select id="morning">
-<option>6:00 AM</option>
-<option>6:30 AM</option>
-<option>7:00 AM</option>
-<option>7:30 AM</option>
-<option>8:00 AM</option>
-<option>8:30 AM</option>
-<option>9:00 AM</option>
-</select>
-
-
-<h3>Evening Delivery (6:30PM - 8:30PM)</h3>
-
-<select id="evening">
-<option>6:30 PM</option>
-<option>7:00 PM</option>
-<option>7:30 PM</option>
-<option>8:00 PM</option>
-<option>8:30 PM</option>
-</select>
-
-
-<button onclick="addCart()">Add To Cart</button>
-
-<button onclick="sendWhatsApp()">Send Order to WhatsApp</button>
-
-</section>
-
-
-
-<section id="payment">
-
-<h2>Online UPI Payment</h2>
-
-<div class="upi">
-
-<div class="upi-box">PhonePe</div>
-
-<div class="upi-box">Google Pay</div>
-
-<div class="upi-box">Paytm</div>
-
-<div class="upi-box">BHIM UPI</div>
-
-</div>
-
-<p>UPI Number: 7569664231 (Vamsi)</p>
-
-</section>
-
-
-
-<section id="help">
-
-<h2>Complaint / Help</h2>
-
-<textarea placeholder="Write your complaint or help request"></textarea>
-
-<button>Submit</button>
-
-<p>Contact: Vamsi | Anil</p>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Vamsi Milk | All Rights Reserved Vamsi</p>
-
-</footer>
+</script>
 
 </body>
 </html>
