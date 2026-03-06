@@ -1,51 +1,24 @@
-let cart = 0;
-
 function addCart(){
-
-cart++;
-
-document.getElementById("cart-count").innerText = cart;
-
-alert("Product added to cart 🥛");
-
+alert("Milk added to cart 🥛");
 }
 
+function sendWhatsApp(){
 
+let name=document.getElementById("name").value;
+let address=document.getElementById("address").value;
+let city=document.getElementById("city").value;
+let pincode=document.getElementById("pincode").value;
 
-function scrollToProducts(){
+let morning=document.getElementById("morning").value;
+let evening=document.getElementById("evening").value;
 
-document.getElementById("products").scrollIntoView({
-behavior:"smooth"
-});
+let msg="New Milk Order%0A"
++"Name: "+name+"%0A"
++"Address: "+address+"%0A"
++"City: "+city+"%0A"
++"Pincode: "+pincode+"%0A"
++"Morning Delivery: "+morning+"%0A"
++"Evening Delivery: "+evening;
 
-}
-
-
-
-function filterProducts(category){
-
-let products = document.querySelectorAll(".product");
-
-products.forEach(product => {
-
-if(category === "all"){
-
-product.style.display = "block";
-
-}
-
-else if(product.classList.contains(category)){
-
-product.style.display = "block";
-
-}
-
-else{
-
-product.style.display = "none";
-
-}
-
-});
-
+window.open("https://wa.me/917569664231?text="+msg);
 }
