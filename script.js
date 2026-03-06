@@ -1,69 +1,51 @@
-function login(e) {
-  e.preventDefault();
+let cart = 0;
 
-  const name = document.getElementById("name").value.trim();
-  const mobile = document.getElementById("mobile").value.trim();
+function addCart(){
 
-  if (name === "") {
-    alert("Please enter your full name");
-    return;
-  }
+cart++;
 
-  if (mobile.length !== 10) {
-    alert("Enter valid 10-digit mobile number");
-    return;
-  }
+document.getElementById("cart-count").innerText = cart;
 
-  localStorage.setItem("USER_NAME", name);
-  localStorage.setItem("USER_MOBILE", mobile);
+alert("Product added to cart 🥛");
 
-  window.location.href = "order.html";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const n = localStorage.getItem("USER_NAME");
-  const m = localStorage.getItem("USER_MOBILE");
 
-  if (!n || !m) {
-    window.location.href = "index.html";
-    return;
-  }
 
-  document.getElementById("oName").value = n;
-  document.getElementById("oMobile").value = m;
+function scrollToProducts(){
 
-  calculateBill();
+document.getElementById("products").scrollIntoView({
+behavior:"smooth"
 });
 
-function calculateBill() {
-  const qty = parseFloat(document.getElementById("quantity").value);
-  const days = parseInt(document.getElementById("plan").value);
-  const total = qty * 80 * days;
-
-  document.getElementById("bill").innerText = total;
-  window.amount = total;
 }
 
-function payUPI() {
-  const url = `upi://pay?pa=7569446231-3@axl&pn=VamsiMilk&am=${window.amount}&cu=INR`;
-  window.location.href = url;
+
+
+function filterProducts(category){
+
+let products = document.querySelectorAll(".product");
+
+products.forEach(product => {
+
+if(category === "all"){
+
+product.style.display = "block";
+
 }
 
-function sendWhatsApp(e) {
-  e.preventDefault();
+else if(product.classList.contains(category)){
 
-  const msg =
-`Milk Order
-Name: ${oName.value}
-Mobile: ${oMobile.value}
-Address: ${address.value}
-Pincode: ${pincode.value}
-Quantity: ${quantity.value}
-Plan: ${plan.value} Days
-Amount: ₹${window.amount}`;
+product.style.display = "block";
 
-  window.open(
-    "https://wa.me/919441990255?text=" + encodeURIComponent(msg),
-    "_blank"
-  );
+}
+
+else{
+
+product.style.display = "none";
+
+}
+
+});
+
 }
