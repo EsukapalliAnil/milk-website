@@ -1,117 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fresh Milk Dairy</title>
+<title>Vamsi Milk</title>
 <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 
 <body>
 
 <header>
-<h1>🥛 Fresh Milk Dairy</h1>
+
+<h1>🐄 Vamsi Milk</h1>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<a href="#order">Order</a>
+<a href="#payment">UPI Payment</a>
+<a href="#help">Complaint / Help</a>
 </nav>
-
-<div class="cart">
-🛒 Cart: <span id="cart-count">0</span>
-</div>
 
 </header>
 
 
-<section id="home" class="hero">
+<section id="order">
 
-<h2>Pure & Healthy Milk</h2>
-<p>Fresh milk delivered directly from farms</p>
-<button onclick="scrollToProducts()">Explore Products</button>
+<h2>Order Fresh Cow Milk</h2>
 
-</section>
+<input id="name" placeholder="Full Name">
+
+<input id="address" placeholder="Full Address">
+
+<input id="city" placeholder="City">
+
+<input id="pincode" placeholder="Pincode">
 
 
+<h3>Morning Delivery (6AM - 9AM)</h3>
 
-<section id="products">
+<select id="morning">
+<option>6:00 AM</option>
+<option>6:30 AM</option>
+<option>7:00 AM</option>
+<option>7:30 AM</option>
+<option>8:00 AM</option>
+<option>8:30 AM</option>
+<option>9:00 AM</option>
+</select>
 
-<h2>Our Dairy Products</h2>
 
-<div class="filter">
-<button onclick="filterProducts('all')">All</button>
-<button onclick="filterProducts('milk')">Milk</button>
-<button onclick="filterProducts('cheese')">Cheese</button>
-<button onclick="filterProducts('butter')">Butter</button>
-</div>
+<h3>Evening Delivery (6:30PM - 8:30PM)</h3>
 
-<div class="product-container">
+<select id="evening">
+<option>6:30 PM</option>
+<option>7:00 PM</option>
+<option>7:30 PM</option>
+<option>8:00 PM</option>
+<option>8:30 PM</option>
+</select>
 
-<div class="product milk">
-<h3>Organic Milk</h3>
-<p>₹60 / litre</p>
-<button onclick="addCart()">Add to Cart</button>
-</div>
 
-<div class="product cheese">
-<h3>Fresh Cheese</h3>
-<p>₹120</p>
-<button onclick="addCart()">Add to Cart</button>
-</div>
+<button onclick="addCart()">Add To Cart</button>
 
-<div class="product butter">
-<h3>Pure Butter</h3>
-<p>₹90</p>
-<button onclick="addCart()">Add to Cart</button>
-</div>
-
-<div class="product milk">
-<h3>Almond Milk</h3>
-<p>₹80</p>
-<button onclick="addCart()">Add to Cart</button>
-</div>
-
-</div>
+<button onclick="sendWhatsApp()">Send Order to WhatsApp</button>
 
 </section>
 
 
 
-<section id="about">
+<section id="payment">
 
-<h2>About Our Farm</h2>
-<p>We provide 100% natural dairy products from healthy cows raised in organic farms.</p>
+<h2>Online UPI Payment</h2>
+
+<div class="upi">
+
+<div class="upi-box">PhonePe</div>
+
+<div class="upi-box">Google Pay</div>
+
+<div class="upi-box">Paytm</div>
+
+<div class="upi-box">BHIM UPI</div>
+
+</div>
+
+<p>UPI Number: 7569664231 (Vamsi)</p>
 
 </section>
 
 
 
-<section id="contact">
+<section id="help">
 
-<h2>Contact Us</h2>
+<h2>Complaint / Help</h2>
 
-<form>
+<textarea placeholder="Write your complaint or help request"></textarea>
 
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<textarea placeholder="Your Message"></textarea>
+<button>Submit</button>
 
-<button type="submit">Send</button>
-
-</form>
+<p>Contact: Vamsi | Anil</p>
 
 </section>
 
 
 <footer>
 
-<p>© 2026 Fresh Milk Dairy</p>
+<p>© 2026 Vamsi Milk | All Rights Reserved Vamsi</p>
 
 </footer>
-
-<script src="script.js"></script>
 
 </body>
 </html>
