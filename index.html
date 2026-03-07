@@ -2,36 +2,136 @@
 <html>
 <head>
 <title>Vamsi Milk Login</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+.marquee{
+position:absolute;
+top:0;
+width:100%;
+background:black;
+color:white;
+padding:10px;
+font-size:18px;
+}
+
+.login-card{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+text-align:center;
+width:320px;
+}
+
+h2{
+color:#0077b6;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#28a745;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#218838;
+}
+
+.otp-box{
+display:none;
+}
+
+</style>
 </head>
 
-<body class="login-body">
+<body>
 
-<div class="scroll-msg">
-<marquee>📢 Contact Vamsi | Contact Anil | Fresh Cow Milk Delivered Daily 🐄🥛</marquee>
+<div class="marquee">
+<marquee>📢 Contact Vamsi | Contact Anil | Fresh Cow Milk Delivery Daily 🐄🥛</marquee>
 </div>
 
-<div class="login-container">
+<div class="login-card">
 
 <h2>Vamsi Milk Login</h2>
 
+<div id="phoneBox">
 <input id="phone" placeholder="Enter Phone Number">
-
 <button onclick="sendOTP()">Send OTP</button>
+</div>
 
-<div id="otpSection">
-
+<div class="otp-box" id="otpBox">
 <input id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify & Login</button>
+</div>
 
-<button onclick="verifyOTP()">Login</button>
+<p id="otpMessage"></p>
 
 </div>
 
-<p id="otpDisplay"></p>
+<script>
 
-</div>
+let generatedOTP;
 
-<script src="script.js"></script>
+function sendOTP(){
+
+let phone=document.getElementById("phone").value;
+
+if(phone.length<10){
+alert("Enter valid phone number");
+return;
+}
+
+generatedOTP=Math.floor(1000+Math.random()*9000);
+
+document.getElementById("otpMessage").innerHTML=
+"Demo OTP: <b>"+generatedOTP+"</b>";
+
+document.getElementById("otpBox").style.display="block";
+
+}
+
+function verifyOTP(){
+
+let userOTP=document.getElementById("otp").value;
+
+if(userOTP==generatedOTP){
+
+window.location="home.html";
+
+}else{
+
+alert("Wrong OTP");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
