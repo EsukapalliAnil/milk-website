@@ -1,137 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Vamsi Milk Login</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#00c6ff,#0072ff);
-}
-
-.marquee{
-position:absolute;
-top:0;
-width:100%;
-background:black;
-color:white;
-padding:10px;
-font-size:18px;
-}
-
-.login-card{
-background:white;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-text-align:center;
-width:320px;
-}
-
-h2{
-color:#0077b6;
-}
-
-input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ccc;
-font-size:16px;
-}
-
-button{
-width:100%;
-padding:12px;
-border:none;
-border-radius:8px;
-background:#28a745;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-button:hover{
-background:#218838;
-}
-
-.otp-box{
-display:none;
-}
-
-</style>
+<meta charset="UTF-8">
+<title>Vamsi Milk</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="marquee">
-<marquee>📢 Contact Vamsi | Contact Anil | Fresh Cow Milk Delivery Daily 🐄🥛</marquee>
+<header>
+<h1>🐄 Vamsi Milk</h1>
+</header>
+
+<section class="order-section">
+
+<h2>Order Fresh Cow Milk</h2>
+
+<div class="form-card">
+
+<input id="name" placeholder="Full Name">
+
+<input id="address" placeholder="Full Address">
+
+<input id="city" placeholder="City">
+
+<input id="pincode" placeholder="Pincode">
+
+<h3>Morning Delivery (6AM - 9AM)</h3>
+
+<select id="morning">
+<option>6:00 AM</option>
+<option>6:30 AM</option>
+<option>7:00 AM</option>
+<option>7:30 AM</option>
+<option>8:00 AM</option>
+<option>8:30 AM</option>
+<option>9:00 AM</option>
+</select>
+
+<h3>Evening Delivery (6:30PM - 8:30PM)</h3>
+
+<select id="evening">
+<option>6:30 PM</option>
+<option>7:00 PM</option>
+<option>7:30 PM</option>
+<option>8:00 PM</option>
+<option>8:30 PM</option>
+</select>
+
+<button onclick="sendOrder()">Add Cart & Send Order</button>
+
 </div>
 
-<div class="login-card">
+</section>
 
-<h2>Vamsi Milk Login</h2>
+<section class="payment">
 
-<div id="phoneBox">
-<input id="phone" placeholder="Enter Phone Number">
-<button onclick="sendOTP()">Send OTP</button>
+<h2>UPI Payment Options</h2>
+
+<div class="upi-container">
+
+<div class="upi-card">📱 PhonePe</div>
+
+<div class="upi-card">💳 Google Pay</div>
+
+<div class="upi-card">💰 Paytm</div>
+
+<div class="upi-card">🏦 BHIM UPI</div>
+
 </div>
 
-<div class="otp-box" id="otpBox">
-<input id="otp" placeholder="Enter OTP">
-<button onclick="verifyOTP()">Verify & Login</button>
-</div>
+<p class="upi-number">UPI Number: 7569664231 (Vamsi)</p>
 
-<p id="otpMessage"></p>
+</section>
 
-</div>
+<section class="help">
 
-<script>
+<h2>Complaint / Help</h2>
 
-let generatedOTP;
+<textarea placeholder="Write complaint or help message"></textarea>
 
-function sendOTP(){
+<button>Submit</button>
 
-let phone=document.getElementById("phone").value;
+<p>📞 Contact Vamsi: 9441990255</p>
 
-if(phone.length<10){
-alert("Enter valid phone number");
-return;
-}
+<p>📞 Contact Anil: 7569446231</p>
 
-generatedOTP=Math.floor(1000+Math.random()*9000);
+</section>
 
-document.getElementById("otpMessage").innerHTML=
-"Demo OTP: <b>"+generatedOTP+"</b>";
+<footer>
 
-document.getElementById("otpBox").style.display="block";
+© 2026 Vamsi Milk | All Rights Reserved Vamsi
 
-}
+</footer>
 
-function verifyOTP(){
-
-let userOTP=document.getElementById("otp").value;
-
-if(userOTP==generatedOTP){
-
-window.location="home.html";
-
-}else{
-
-alert("Wrong OTP");
-
-}
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
