@@ -11,16 +11,17 @@ justify-content:center;
 align-items:center;
 }
 
-.scroll-msg{
+.scrolling-bar{
 position:absolute;
 top:0;
 width:100%;
 background:black;
 color:white;
 padding:10px;
+font-size:18px;
 }
 
-.login-container{
+.login-box{
 background:white;
 padding:40px;
 border-radius:15px;
@@ -28,20 +29,26 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 text-align:center;
 }
 
-input,select{
+input,select,textarea{
 display:block;
 width:250px;
 margin:10px auto;
 padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
 button{
 padding:10px 20px;
-background:#28a745;
 border:none;
-color:white;
 border-radius:20px;
+background:#28a745;
+color:white;
 cursor:pointer;
+}
+
+button:hover{
+background:#1e7e34;
 }
 
 header{
@@ -49,18 +56,56 @@ background:#0077b6;
 color:white;
 text-align:center;
 padding:20px;
+font-size:26px;
 }
 
 .order-section{
-padding:30px;
 text-align:center;
+padding:30px;
+background:linear-gradient(120deg,#84fab0,#8fd3f4);
 }
 
-.form-box{
+.form-card{
 background:white;
 padding:20px;
 width:320px;
 margin:auto;
 border-radius:15px;
 box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.payment{
+text-align:center;
+padding:30px;
+}
+
+.upi-container{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.upi-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+.help{
+background:white;
+padding:30px;
+width:320px;
+margin:30px auto;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
 }
