@@ -14,7 +14,7 @@ return;
 
 generatedOTP=Math.floor(1000+Math.random()*9000);
 
-document.getElementById("otpDisplay").innerHTML="Demo OTP: "+generatedOTP;
+document.getElementById("otpText").innerHTML="Demo OTP: "+generatedOTP;
 
 document.getElementById("otpSection").style.display="block";
 
@@ -35,7 +35,6 @@ alert("Wrong OTP");
 }
 
 }
-
 
 function sendOrder(){
 
