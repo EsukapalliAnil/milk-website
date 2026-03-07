@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Milk Delivery</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(120deg,#74ebd5,#ACB6E5);
+}
+
+/* HEADER */
+
+header{
+background:#fff;
+padding:15px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+color:#2c3e50;
+}
+
+nav a{
+margin:0 10px;
+text-decoration:none;
+font-weight:bold;
+color:#2c3e50;
+}
+
+/* SCROLL MESSAGE */
+
+.marquee{
+background:#ff9800;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px;
+color:white;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+/* LOGIN BOX */
+
+.login-box{
+width:320px;
+background:white;
+margin:30px auto;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.login-box h3{
+text-align:center;
+margin-bottom:20px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:8px 0;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+background:#27ae60;
+color:white;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#219150;
+}
+
+/* ORDER FORM */
+
+.order-section{
+background:white;
+margin:40px auto;
+padding:30px;
+width:400px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+}
+
+.order-section h2{
+text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+background:#2c3e50;
+color:white;
+padding:15px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🥛 Anil Milk Service</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Order</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<div class="marquee">
+<marquee>🔥 Fresh Cow Milk Delivered Every Morning | Special Discount for Monthly Customers 🔥</marquee>
+</div>
+
+<div class="hero">
+<h2>Pure & Fresh Milk</h2>
+<p>Healthy Milk Delivered to Your Doorstep</p>
+</div>
+
+<!-- LOGIN PAGE -->
+
+<div class="login-box">
+
+<h3>Customer Login</h3>
+
+<form onsubmit="return login()">
+
+<input type="text" id="username" placeholder="Enter Username">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+<!-- ORDER FORM -->
+
+<div class="order-section">
+
+<h2>Milk Order Form</h2>
+
+<form>
+
+<input type="text" placeholder="Customer Name">
+
+<input type="text" placeholder="Phone Number">
+
+<input type="text" placeholder="Address">
+
+<select>
+<option>Select Milk Type</option>
+<option>Cow Milk</option>
+<option>Buffalo Milk</option>
+</select>
+
+<input type="number" placeholder="Quantity (Liters)">
+
+<button type="submit">Place Order</button>
+
+</form>
+
+</div>
+
+<footer>
+
+© 2026 Anil Milk Delivery Service
+
+</footer>
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user=="admin" && pass=="1234"){
+
+alert("Login Successful");
+
+return true;
+
+}
+
+else{
+
+alert("Invalid Login");
+
+return false;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
